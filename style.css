@@ -1,0 +1,150 @@
+/* Ancestral Puebloan City Engine - Styles */
+
+:root {
+    --earth-ochre: #c26a38;
+    --burnt-sienna: #8c381e;
+    --sand-tan: #e3c193;
+    --sand-light: #f4e3c9;
+    --dark-clay: #1c1512;
+    --hud-bg: rgba(28, 21, 18, 0.82);
+    --hud-border: rgba(194, 106, 56, 0.4);
+    --hud-text: #f1e5d1;
+    --accent-turquoise: #38a3a5;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    background-color: var(--dark-clay);
+    color: var(--hud-text);
+    user-select: none;
+}
+
+#canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+
+#ui-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+}
+
+.header {
+    pointer-events: auto;
+    background: var(--hud-bg);
+    border: 1px solid var(--hud-border);
+    backdrop-filter: blur(8px);
+    padding: 16px 24px;
+    border-radius: 8px;
+    max-width: 420px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.header h1 {
+    font-size: 1.4rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--sand-tan);
+    margin-bottom: 4px;
+}
+
+.header p {
+    font-size: 0.85rem;
+    color: var(--sand-light);
+    opacity: 0.8;
+}
+
+.controls-card {
+    pointer-events: auto;
+    background: var(--hud-bg);
+    border: 1px solid var(--hud-border);
+    backdrop-filter: blur(8px);
+    padding: 18px 24px;
+    border-radius: 8px;
+    max-width: 360px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.controls-card h3 {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--earth-ochre);
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(227, 193, 147, 0.15);
+    padding-bottom: 6px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+button {
+    flex: 1;
+    background: linear-gradient(135deg, var(--burnt-sienna), var(--earth-ochre));
+    border: none;
+    color: #ffffff;
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    filter: brightness(1.15);
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+.info-metrics {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--sand-tan);
+}
+
+.info-metrics span {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    #ui-overlay {
+        padding: 12px;
+    }
+    
+    .header, .controls-card {
+        max-width: 100%;
+    }
+}
