@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ancestral Puebloan City | Pueblo III Period (~1150–1300 CE)</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⛰️ Ancestral Puebloan City Visualization</h1>
+            <p class="subtitle">Pueblo III Period (~1150–1300 CE) | High Desert Southwest</p>
+            <div class="info-panel">
+                <div class="info-item">
+                    <strong>Elevation:</strong> 7,200–8,400 ft
+                </div>
+                <div class="info-item">
+                    <strong>Population Est.:</strong> 2,000–3,500 residents
+                </div>
+                <div class="info-item">
+                    <strong>Primary Materials:</strong> Sandstone, Adobe, Pine
+                </div>
+                <div class="info-item">
+                    <strong>Season:</strong> Early Autumn (Golden Hour)
+                </div>
+            </div>
+        </header>
+
+        <canvas id="canvas"></canvas>
+
+        <div class="controls">
+            <div class="toggle-group">
+                <label>
+                    <input type="checkbox" id="showStructures" checked>
+                    Show Structures
+                </label>
+                <label>
+                    <input type="checkbox" id="showWater" checked>
+                    Show Water Systems
+                </label>
+                <label>
+                    <input type="checkbox" id="showAgri" checked>
+                    Show Agriculture
+                </label>
+                <label>
+                    <input type="checkbox" id="showPeople" checked>
+                    Show People
+                </label>
+            </div>
+            <button onclick="toggleLegend()">📋 Toggle Legend</button>
+            <button onclick="resetView()">🔄 Reset View</button>
+            <button onclick="toggleAnimations()">⏸️ Toggle Animations</button>
+        </div>
+
+        <footer>
+            <div id="legendContainer" style="display: none; margin-bottom: 10px;">
+                <strong>LEGEND — Interactive Ancestral Puebloan City</strong>
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #8b7355;"></div>
+                        <span>Residential & Ceremonial Structures</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #d4a574;"></div>
+                        <span>Defensive Parapets & Walls</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #4a90e2;"></div>
+                        <span>Water Reservoirs & Canals</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #2d5a2d;"></div>
+                        <span>Agricultural Fields (Maize)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #5a7d3e;"></div>
+                        <span>Three Sisters Gardens & Terraces</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #e8b87e;"></div>
+                        <span>Waffle Gardens & Weaving Alcoves</span>
+                    </div>
+                </div>
+            </div>
+            <p><span class="time-indicator">TIME:</span> Late afternoon (~4:30 PM) | <span class="time-indicator">SEASON:</span> Early Autumn | 
+            <span class="time-indicator">PERIOD:</span> Pueblo III (~1150–1300 CE)</p>
+        </footer>
+    </div>
+
+    <script src="js/constants.js"></script>
+    <script src="js/renderer.js"></script>
+    <script src="js/structures.js"></script>
+    <script src="js/water.js"></script>
+    <script src="js/agriculture.js"></script>
+    <script src="js/people.js"></script>
+    <script src="js/environment.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
